@@ -62,6 +62,7 @@ namespace Dottor.EventGenerics
             var first = list.First();
             var first2 = list.FirstOrDefault();
 
+
             var firstAfter100 = (from p in list
                                  where p.Price > 100
                                  orderby p.Price
@@ -76,7 +77,9 @@ namespace Dottor.EventGenerics
                                     .OrderBy(p => p.Price)
                                     .FirstOrDefault(p => p.Price > 100);
 
+            var p50 = list.FirstOrDefault(p => p.Id == 50);
 
+            
 
             foreach (var product in priceLess100)
             {
