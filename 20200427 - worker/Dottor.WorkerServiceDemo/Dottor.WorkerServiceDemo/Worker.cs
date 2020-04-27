@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Dottor.WorkerServiceDemo.Models;
 using Dottor.WorkerServiceDemo.Services;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Dottor.WorkerServiceDemo
 {
@@ -23,6 +26,23 @@ namespace Dottor.WorkerServiceDemo
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+
+           
+            var client = new WebClient();
+            var json = client.DownloadString("http://www.boredapi.com/api/activity/");
+
+            var activity = JsonConvert.DeserializeObject<Activity>(json, new JsonSerializerSettings()
+            {
+                Error = (sender, e) =>
+                {
+                    e.ErrorContext.Handled = true;
+                }
+            });
+
+            _logger.LogInformation(activity.Title);
+
+
+
             var list = _dataAccess.GetList();
             _logger.LogInformation($"Sono presenti {list.Count()} elementi.");
 
