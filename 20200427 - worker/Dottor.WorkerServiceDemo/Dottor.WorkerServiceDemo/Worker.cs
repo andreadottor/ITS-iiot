@@ -26,8 +26,6 @@ namespace Dottor.WorkerServiceDemo
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-
-           
             var client = new WebClient();
             var json = client.DownloadString("http://www.boredapi.com/api/activity/");
 
