@@ -161,20 +161,42 @@ values (@name, @description)";
             {
                 connection.Open();
 
-                var query = @"
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        var query = @"
 update Categories 
 set 
     CategoryName = @name, 
     Description = @description
 where CategoryId = @id";
 
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("id", category.Id);
-                    command.Parameters.AddWithValue("name", category.Name);
-                    command.Parameters.AddWithValue("description", category.Description);
+                        using (var command = new SqlCommand(query, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("id", category.Id);
+                            command.Parameters.AddWithValue("name", category.Name);
 
-                    command.ExecuteNonQuery();
+                            //if(category.Description == null)
+                            //    command.Parameters.AddWithValue("description", DBNull.Value);
+                            //else
+                            //    command.Parameters.AddWithValue("description", category.Description);
+
+                            //command.Parameters.AddWithValue("description", category.Description == null ? DBNull.Value : (object)category.Description);
+
+                            command.Parameters.AddWithValue("description", (object)category.Description ?? DBNull.Value);
+
+                            command.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+
                 }
             }
         }
