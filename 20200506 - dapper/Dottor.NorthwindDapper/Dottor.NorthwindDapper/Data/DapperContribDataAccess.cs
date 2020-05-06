@@ -2,17 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
 using Dapper;
+using Dapper.Contrib.Extensions;
 
 namespace Dottor.NorthwindDapper.Data
 {
-    class DapperDataAccess :IDataAccess
+    class DapperContribDataAccess : IDataAccess
     {
         private readonly string _connectionString;
 
-        public DapperDataAccess()
+        public DapperContribDataAccess()
         {
             this._connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Northwind;Integrated Security=True;Pooling=False";
         }
@@ -21,8 +21,7 @@ namespace Dottor.NorthwindDapper.Data
         {
             using(var connection = new SqlConnection(_connectionString))
             {
-                const string query = "select CategoryID, CategoryName, Description from Categories";
-                return connection.Query<Category>(query);
+                return connection.GetAll<Category>();
             }
         }
 
@@ -30,15 +29,7 @@ namespace Dottor.NorthwindDapper.Data
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                const string query = @"
-select 
-    CategoryID, 
-    CategoryName, 
-    Description 
-from Categories
-where CategoryId = @CatId";
-
-                return connection.QueryFirstOrDefault<Category>(query, new { CatId = id });
+                return connection.Get<Category>(id);
             }
         }
 
@@ -55,11 +46,7 @@ where CategoryId = @CatId";
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                const string query = @"
-insert into Categories (CategoryName, Description)
-values (@CategoryName, @Description)";
-
-                connection.Execute(query, category);
+                connection.Insert(category);
             }
         }
 
@@ -67,14 +54,7 @@ values (@CategoryName, @Description)";
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                const string query = @"
-update Categories 
-set 
-    CategoryName = @CategoryName, 
-    Description = @Description
-where CategoryId = @CategoryId";
-
-                connection.Execute(query, category);
+                connection.Update(category);
             }
         }
 
@@ -82,11 +62,14 @@ where CategoryId = @CategoryId";
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                const string query = @"delete from Categories where CategoryId = @id";
-                //connection.Execute(query, new { id = id });
-                connection.Execute(query, new { id });
+                connection.Delete(new Category
+                { 
+                    CategoryId = id
+                });
+
+                //var category = connection.Get<Category>(id);
+                //connection.Delete(category);
             }
         }
-
     }
 }
