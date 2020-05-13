@@ -10,9 +10,9 @@ namespace Dottor.Northwind.Services
     {
         private readonly ICategoriesRepository _categoriesRepository;
 
-        public CategoriesService()
+        public CategoriesService(ICategoriesRepository categoriesRepository)
         {
-            _categoriesRepository = new CategoriesRepository();
+            _categoriesRepository = categoriesRepository;
         }
 
         public void DeleteCategory(int id)
@@ -26,6 +26,8 @@ namespace Dottor.Northwind.Services
         {
             return _categoriesRepository.GetAll();
         }
+
+
         
     }
 }

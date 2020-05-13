@@ -7,11 +7,11 @@ namespace Dottor.Northwind.AppConsole
     {
         static void Main(string[] args)
         {
-            ICategoriesService categoriesService = new CategoriesService();
+            //ICategoriesService categoriesService = new CategoriesService();
 
-            var categories = categoriesService.GetAll();
+            //var categories = categoriesService.GetAll();
 
-            categoriesService.DeleteCategory(12);
+            //categoriesService.DeleteCategory(12);
 
 
         }

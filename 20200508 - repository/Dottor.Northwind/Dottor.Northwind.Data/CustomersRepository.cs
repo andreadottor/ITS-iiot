@@ -1,4 +1,5 @@
 ﻿using Dottor.Northwind.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,14 @@ namespace Dottor.Northwind.Data
 {
     public class CustomersRepository : ICustomersRepository
     {
+        private readonly string _connectionString;
+
+        public CustomersRepository(IConfiguration configuration)
+        {
+            _connectionString = configuration.GetConnectionString("Northwind");
+        }
+
+
         public int Count()
         {
             throw new NotImplementedException();

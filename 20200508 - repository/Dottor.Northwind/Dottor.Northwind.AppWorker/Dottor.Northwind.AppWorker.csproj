@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-Dottor.Northwind.AppWorker-1C75C0F4-59C6-4CC0-889C-6378DA9D1101</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dottor.Northwind.Data\Dottor.Northwind.Data.csproj" />
+    <ProjectReference Include="..\Dottor.Northwind.Models\Dottor.Northwind.Models.csproj" />
+    <ProjectReference Include="..\Dottor.Northwind.Services\Dottor.Northwind.Services.csproj" />
+  </ItemGroup>
+</Project>
