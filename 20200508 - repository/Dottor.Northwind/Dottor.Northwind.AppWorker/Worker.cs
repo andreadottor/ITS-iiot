@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,23 +23,22 @@ namespace Dottor.Northwind.AppWorker
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+
+            Process p = Process.GetCurrentProcess();
+            PerformanceCounter ramCounter = new PerformanceCounter("Process", "Working Set", "_Total");
+            PerformanceCounter cpuCounter = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
+
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                double ram = ramCounter.NextValue();
+                double cpu = cpuCounter.NextValue();
 
-                // ID
-                // Date
-                // CPU
-                // Memory
-
-
-                // appsettings 
-                // interval
-                // soglia -> 90 --> email
-
-
+                Console.WriteLine("RAM: " + (ram / 1024 / 1024) + " MB; CPU: " + (cpu) + " %");
                 await Task.Delay(1000, stoppingToken);
             }
         }
+
+
+
     }
 }
