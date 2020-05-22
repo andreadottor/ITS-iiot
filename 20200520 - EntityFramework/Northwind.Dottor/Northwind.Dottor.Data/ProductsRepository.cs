@@ -24,6 +24,20 @@ namespace Northwind.Dottor.Data
                         .ToArray();
         }
 
+        public IEnumerable<Product> GetByCategoryId(int categoryId)
+        {
+            return (from p in _northwindContext.Products
+                    where p.CategoryID == categoryId
+                    orderby p.ProductName
+                    select p).ToArray();
+
+            //return _northwindContext.Products
+            //            .Where(p => p.CategoryID == categoryId)
+            //            .OrderBy(p => p.ProductName)
+            //            .ToArray();
+        }
+
+
         public Product GetById(int productId)
         {
             return _northwindContext.Products.FirstOrDefault(p => p.ProductID == productId);
