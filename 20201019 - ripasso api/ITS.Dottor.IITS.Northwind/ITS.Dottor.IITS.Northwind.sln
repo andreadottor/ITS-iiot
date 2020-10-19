@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Dottor.IITS.Northwind.WebApi", "ITS.Dottor.IITS.Northwind.WebApi\ITS.Dottor.IITS.Northwind.WebApi.csproj", "{A1FECB46-E1D3-4219-8EA3-375520927953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Dottor.IITS.Northwind.Data", "ITS.Dottor.IITS.Northwind.Data\ITS.Dottor.IITS.Northwind.Data.csproj", "{02B870DD-2BD6-4561-B02B-9DCAA6B03EC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1FECB46-E1D3-4219-8EA3-375520927953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FECB46-E1D3-4219-8EA3-375520927953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FECB46-E1D3-4219-8EA3-375520927953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FECB46-E1D3-4219-8EA3-375520927953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B870DD-2BD6-4561-B02B-9DCAA6B03EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B870DD-2BD6-4561-B02B-9DCAA6B03EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B870DD-2BD6-4561-B02B-9DCAA6B03EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B870DD-2BD6-4561-B02B-9DCAA6B03EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59C27825-0B1B-483E-B867-DD32BFE88697}
+	EndGlobalSection
+EndGlobal
