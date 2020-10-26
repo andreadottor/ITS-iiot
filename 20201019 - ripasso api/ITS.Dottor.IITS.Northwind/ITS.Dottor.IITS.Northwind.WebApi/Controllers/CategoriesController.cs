@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ITS.Dottor.IITS.Northwind.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/categories")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
@@ -30,10 +30,10 @@ namespace ITS.Dottor.IITS.Northwind.WebApi.Controllers
         }
 
         // GET api/Categories/5
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        [HttpGet("{categoryId}")]
+        public IActionResult Get(int categoryId)
         {
-            var category = _categoriesRepository.GetById(id);
+            var category = _categoriesRepository.GetById(categoryId);
             if (category == null)
                 return NotFound();
 
@@ -45,6 +45,7 @@ namespace ITS.Dottor.IITS.Northwind.WebApi.Controllers
         public void Post([FromBody] Category category)
         {
             _categoriesRepository.Insert(category);
+            //return Created();
         }
 
         // PUT api/Categories/5
