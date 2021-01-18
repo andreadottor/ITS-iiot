@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-IIOT.Dottor.FrostManager.MailWorker-6EB0F3D6-028A-4245-98D8-E136684D0967</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IIOT.Dottor.FrostManager.Application\IIOT.Dottor.FrostManager.Application.csproj" />
+  </ItemGroup>
+</Project>

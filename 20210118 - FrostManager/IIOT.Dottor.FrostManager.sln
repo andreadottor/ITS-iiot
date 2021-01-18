@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIOT.Dottor.FrostManager.Web", "IIOT.Dottor.FrostManager.Web\IIOT.Dottor.FrostManager.Web.csproj", "{6FD4CC63-AC52-4DCD-B8B7-248F32E318F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIOT.Dottor.FrostManager.MailWorker", "IIOT.Dottor.FrostManager.MailWorker\IIOT.Dottor.FrostManager.MailWorker.csproj", "{B7F245E1-590E-4835-A4DC-368BC30D35E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIOT.Dottor.FrostManager.StorageWorker", "IIOT.Dottor.FrostManager.StorageWorker\IIOT.Dottor.FrostManager.StorageWorker.csproj", "{9E169974-529C-4CEB-8CAC-8D638F954866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIOT.Dottor.FrostManager.Data", "IIOT.Dottor.FrostManager.Data\IIOT.Dottor.FrostManager.Data.csproj", "{E267B375-6117-4788-AC64-2C4422058B86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIOT.Dottor.FrostManager.Application", "IIOT.Dottor.FrostManager.Application\IIOT.Dottor.FrostManager.Application.csproj", "{2F2C8AE1-A80F-404B-8B45-0E248300178C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FD4CC63-AC52-4DCD-B8B7-248F32E318F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD4CC63-AC52-4DCD-B8B7-248F32E318F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD4CC63-AC52-4DCD-B8B7-248F32E318F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD4CC63-AC52-4DCD-B8B7-248F32E318F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F245E1-590E-4835-A4DC-368BC30D35E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F245E1-590E-4835-A4DC-368BC30D35E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F245E1-590E-4835-A4DC-368BC30D35E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F245E1-590E-4835-A4DC-368BC30D35E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E169974-529C-4CEB-8CAC-8D638F954866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E169974-529C-4CEB-8CAC-8D638F954866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E169974-529C-4CEB-8CAC-8D638F954866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E169974-529C-4CEB-8CAC-8D638F954866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E267B375-6117-4788-AC64-2C4422058B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E267B375-6117-4788-AC64-2C4422058B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E267B375-6117-4788-AC64-2C4422058B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E267B375-6117-4788-AC64-2C4422058B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F2C8AE1-A80F-404B-8B45-0E248300178C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F2C8AE1-A80F-404B-8B45-0E248300178C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F2C8AE1-A80F-404B-8B45-0E248300178C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F2C8AE1-A80F-404B-8B45-0E248300178C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F622818E-4F46-4539-BE5D-4F99E2CE57A3}
+	EndGlobalSection
+EndGlobal
