@@ -20,6 +20,9 @@
         [BindProperty]
         public MessageModel Input { get; set; }
 
+        [TempData]
+        public string SuccessMessage { get; set; }
+
         public IndexModel(ILogger<IndexModel> logger, IConfiguration configuration)
         {
             _logger = logger;
@@ -40,7 +43,9 @@
                 var commandMessage = 
                             new Message(Encoding.ASCII.GetBytes(Input.MessageText));
                 await serviceClient.SendAsync(Input.TargetDevice, commandMessage);
-                
+
+                SuccessMessage = "Messaggio inviato con successo!";
+
                 return RedirectToPage();
             }
             return Page();

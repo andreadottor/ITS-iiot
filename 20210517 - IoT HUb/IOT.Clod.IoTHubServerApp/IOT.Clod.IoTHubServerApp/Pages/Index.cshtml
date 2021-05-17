@@ -4,6 +4,14 @@
     ViewData["Title"] = "Home page";
 }
 
+@if (!string.IsNullOrWhiteSpace(Model.SuccessMessage))
+{
+    <div role="alert" class="alert alert-success alert-dismissible mb-3">
+        @Model.SuccessMessage
+    </div>
+}
+
+
 <form method="post">
 
     <div class="form-group">
