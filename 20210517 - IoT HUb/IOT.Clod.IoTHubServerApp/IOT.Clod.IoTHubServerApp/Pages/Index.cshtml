@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+
+    <div class="form-group">
+        <label asp-for="Input.TargetDevice"></label>
+        <select class="form-control" asp-for="Input.TargetDevice">
+            <option value="Device1">Device 1</option>
+            <option value="Device2">Device 2</option>
+        </select>
+        <span class="text-danger" asp-validation-for="Input.TargetDevice"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Input.MessageText"></label>
+        <input class="form-control" asp-for="Input.MessageText" />
+        <span class="text-danger" asp-validation-for="Input.MessageText"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salva</button>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
