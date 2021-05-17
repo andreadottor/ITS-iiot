@@ -33,8 +33,8 @@ namespace IOT.Clod.IoTHubDevice
                 if (receivedMessage == null) continue;
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Received message: {0}",
-                Encoding.ASCII.GetString(receivedMessage.GetBytes()));
+                var text = Encoding.ASCII.GetString(receivedMessage.GetBytes());
+                Console.WriteLine("Received message: {0}", text);
                 Console.ResetColor();
 
                 await s_deviceClient.CompleteAsync(receivedMessage);
