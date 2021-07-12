@@ -1,0 +1,20 @@
+﻿@page "{id}"
+@model ITS.IIOT.WebApp.Pages.Queues.ManageModel
+@{
+}
+
+@*/queues/manage/banco-2
+/queues/manage?id=banco-2*@
+
+<h1>@Model.Queue.Description</h1>
+
+<form method="post">
+    <div style="font-size: 50px; text-align:center">
+        @Model.Counter
+    </div>
+
+    <input asp-for="Counter" type="hidden" />
+
+    <button type="submit" 
+            class="btn btn-primary btn-lg">next</button>
+</form>

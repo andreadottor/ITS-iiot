@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.IIOT.WebApp", "ITS.IIOT.WebApp\ITS.IIOT.WebApp.csproj", "{C299C29A-F790-4769-AA8A-C6C37F33F750}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C299C29A-F790-4769-AA8A-C6C37F33F750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C299C29A-F790-4769-AA8A-C6C37F33F750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C299C29A-F790-4769-AA8A-C6C37F33F750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C299C29A-F790-4769-AA8A-C6C37F33F750}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00FDF56F-1ECA-434C-9844-FEBDDA7B2D7A}
+	EndGlobalSection
+EndGlobal

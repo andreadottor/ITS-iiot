@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<ul class="list-group">
+    @foreach (var q in Model.List)
+    {
+        <li class="list-group-item">
+            <a asp-page="Queues/Manage"
+               asp-route-id="@q.QueueId">@q.Description</a>
+        </li>
+    }
+</ul>

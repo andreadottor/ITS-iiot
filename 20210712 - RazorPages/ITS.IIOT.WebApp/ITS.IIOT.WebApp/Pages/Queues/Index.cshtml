@@ -1,0 +1,30 @@
+﻿@page
+@model ITS.IIOT.WebApp.Pages.Queues.IndexModel
+@{
+    var queues = Model.List
+                    .Select(q =>
+                        new SelectListItem(q.Description, q.QueueId));
+}
+<h1>Gestione code</h1>
+<form method="post">
+
+    <select asp-for="QueueId">
+        <option value="">Seleziona una coda</option>
+        @foreach (var q in Model.List)
+        {
+            <option value="@q.QueueId">@q.Description</option>
+        }
+    </select>
+    <span class="text-danger" asp-validation-for="QueueId"></span>
+
+    @*<select asp-for="QueueId"
+        asp-items="queues"></select>*@
+    <br />
+    <input asp-for="Counter" />
+    <br />
+
+    <button type="submit"
+            class="btn btn-primary btn-lg">
+        next
+    </button>
+</form>
