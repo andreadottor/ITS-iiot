@@ -35,7 +35,7 @@ namespace ITS.IIOT.WebApp.Pages.Queues
             List = _queueService.GetQueues();
         }
 
-        public void OnPost()
+        public async Task OnPost()
         {
             List = _queueService.GetQueues();
 
@@ -46,11 +46,10 @@ namespace ITS.IIOT.WebApp.Pages.Queues
 
                 var queue = _queueService.GetById(QueueId);
 
-                _messageService.SendMessage(queue.DeviceId,
+                await _messageService.SendMessageAsync(queue.DeviceId,
                                             queue.QueueId,
                                             Counter);
             }
-
         }
     }
 }

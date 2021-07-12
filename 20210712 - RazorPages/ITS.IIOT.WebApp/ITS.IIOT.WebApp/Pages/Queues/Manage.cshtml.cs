@@ -31,7 +31,7 @@ namespace ITS.IIOT.WebApp.Pages.Queues
             Queue = _queueService.GetById(id);
         }
 
-        public void OnPost(string id)
+        public async Task OnPost(string id)
         {
             Queue = _queueService.GetById(id);
             Counter++;
@@ -42,7 +42,7 @@ namespace ITS.IIOT.WebApp.Pages.Queues
             //var pic = id; //Queue.QueueId
             //var number = Counter;
 
-            _messageService.SendMessage(Queue.DeviceId, 
+            await _messageService.SendMessageAsync(Queue.DeviceId, 
                                         Queue.QueueId, 
                                         Counter);
         }
